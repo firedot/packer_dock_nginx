@@ -15,6 +15,14 @@ Information about Docker [here](https://www.docker.com/why-docker)
 **Vagrant**
 **VirtualBox**
 
+Create the following environmental variables: 
+
+````
+export DOCKER_HUB_USERNAME="<your_dockerhub_username>"
+export DOCKER_HUB_PASSWORD="<your_dockerhub_password>"
+
+````
+
 Clone this repository: [git](https://github.com/kikitux/xenial-docker.git) by running the following command:
 
 ````
@@ -53,7 +61,6 @@ Run the following line:
 ````
 packer build docker_template.json
 ````
-This line will generate a Docker image based on that repo: https://hub.docker.com/r/firedot/xenial_nginx/
-The image will be under the filename: **xenial.tar**
+This line will generate a Docker image and will upload it to the Docker Hub.
 
 
