@@ -1,34 +1,28 @@
 {
-  "variables": {
-    "name": "firedot/redis64",
-    "build_name": "redis64",
-    "build_cpu_cores": "2",
-    "build_memory": "1024",
-    "cpu_cores": "1",
-    "memory": "512",
-    "disk_size": "40960",
-    "headless": "false",
-    "iso_checksum": "c94de1cc2e10160f325eb54638a5b5aa38f181d60ee33dae9578d96d932ee5f8",  
-    "iso_checksum_type": "sha256",
-    "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.5-server-amd64.iso",   
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant"
+  "variables": {                
+    "docker_hub_username": "{{ env `DOCKER_HUB_USERNAME` }}",
+    "docker_hub_password": "{{ env `DOCKER_HUB_PASSWORD` }}",
+    "tag_version": "0.{{timestamp}}"
   },
-  "push": {
-    "name": "{{user `name`}}",
-    "exclude": [
-      ".git",
-      "packer_cache",
-      "output*-docker",
-      "*.box"
-    ]
-  },
-  "builders": [
-  {
+  "builders": [{
     "type": "docker",
     "image": "firedot/xenial",
-    "export_path": "xenial.tar"
-   }
+    "commit": true
+  }],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "firedot/test",
+        "tag": "{{user `tag_version`}}"
+      },
+      {
+        "type": "docker-push",
+        "login": true,
+        "login_username": "{{user `docker_hub_username`}}",
+        "login_password": "{{user `docker_hub_password`}}"
+      }
+    ]
   ],
   "provisioners": [
   {
@@ -36,4 +30,5 @@
     "script": "./scripts/nginx_install.sh"
 }
  ]
-} 
+
+}
