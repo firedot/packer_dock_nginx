@@ -1,4 +1,4 @@
-# packer_dock_nginx
+# packer_docker_nginx
 
 Docker image built with packer
 
@@ -50,7 +50,7 @@ You are now connected to the virtual machine.
 Clone this repository by typing:
 
 ````
-git clone https://github.com/firedot/packer_dock_nginx.git
+git clone https://github.com/firedot/packer_docker_nginx.git
 ````
 
 Go to the cloned repo dir.
