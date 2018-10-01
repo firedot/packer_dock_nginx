@@ -20,7 +20,6 @@ Create the following environmental variables:
 ````
 export DOCKER_HUB_USERNAME="<your_dockerhub_username>"
 export DOCKER_HUB_PASSWORD="<your_dockerhub_password>"
-
 ````
 
 Clone this repository: [git](https://github.com/kikitux/xenial-docker.git) by running the following command:
