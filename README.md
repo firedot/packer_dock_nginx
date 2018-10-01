@@ -60,6 +60,6 @@ Run the following line:
 ````
 packer build docker_template.json
 ````
-This line will generate a Docker image and will upload it to the Docker Hub.
+This line will generate a Docker image with nginx available, and will upload it to the Docker Hub.
 
 
