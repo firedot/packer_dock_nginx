@@ -35,7 +35,7 @@ Type:
 ````
 vagrant up
 
-#This will bring your VM
+#This will start your VM
 ````
 
 Then enter the machine by typing:
