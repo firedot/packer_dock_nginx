@@ -43,7 +43,7 @@ You are now connected to the virtual machine.
 Clone this repository by typing:
 
 ````
-git clone https://github.com/firedot/packer_docker.git
+git clone https://github.com/firedot/packer_dock_nginx.git
 ````
 
 Go to the cloned repo dir.
@@ -53,7 +53,7 @@ Run the following line:
 ````
 packer build docker_template.json
 ````
-This line will generate a Docker image based on that repo:
+This line will generate a Docker image based on that repo: https://hub.docker.com/r/firedot/xenial_nginx/
 The image will be under the filename: **xenial.tar**
 
 
