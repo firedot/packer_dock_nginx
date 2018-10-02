@@ -13,7 +13,7 @@
     [
       {
         "type": "docker-tag",
-        "repository": "firedot/test",
+        "repository": "firedot/xenial_nginx",
         "tag": "{{user `tag_version`}}"
       },
       {
